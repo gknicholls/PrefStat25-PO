@@ -1,5 +1,11 @@
 ###
-### Modelling Random Orders with Partial Orders: 1st Practical session
+#Practical for PrefStat25 
+#Thursday July 3rd 2025
+#Lecturers: Geoff Nicholls & Kate Lee
+#Bayesian Inference for Partial Orders from Rank-Order Data (part I)
+#15:30 – 17:00 LAB: Explore basic Partial Order properties in R
+
+#https://github.com/gknicholls/PrefStat25-PO
 
 #######################################################################
 ### 1/12 Setup

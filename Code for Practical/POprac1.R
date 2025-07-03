@@ -29,7 +29,7 @@ library(partitions) # used by dimension functions
 
 # where are we working?
 
-wd<-"C:/Users/nicholls.NICHOLLS2389/Documents/collab - Kate/Oslo"
+wd<-"C:/Users/nicholls.NICHOLLS2389/OneDrive - Nexus365/Documents/GitHub/PrefStat25-PO"
 setwd(wd)
 
 # load function files
@@ -143,7 +143,8 @@ legend('topright',cex=0.9,lty=c(1,1,NA,NA),pch=c(NA,NA,16,16),col=c('black','lig
 v=matrix(c(1,2,3,1,3,2),3,2)
 v
 
-# Now compute the intersection
+# Now compute the intersection - the intersection order is 
+# a partial order
 
 hi<-intersect.TO(v)
 hi
@@ -188,7 +189,14 @@ nle(b);
 
 # Intersect the LEs and check you get back the PO
 
-bc<-intersect.TO(le)
+bc<-intersect.TO(le) 
+# the right function when the LEs have the same length - takes matrix
+# like le[] as input - when the LEs have different length we put them
+# in a list and intersect the using the function intersect.SO() - 
+# the TO stands for total orders (ie, complete orders) and the SO stands
+# for suborders
+
+# poset bc should be the same as b
 showDAG(bc,edge.color='black',vertex.color=NA,vertex.size=45,edge.arrow.size=0.5)
 title('intersection of its LEs')
 par(gpars)
@@ -652,3 +660,8 @@ barplot(ft~perm.str,las=2,cex.names=0.7,col=cols,
         cex.main=0.8)
 legend('topright',legend=c('LE of h','not LE'),
        col=c('lightblue','lightgrey'),pch=c(15,15))
+
+# if you make the value of p.val small the distribution will
+# concentrate on the LEs (the blue bars), if you make p.val
+# close to one the distribution will converge to uniform and
+# there will be no signal from the PO in the data

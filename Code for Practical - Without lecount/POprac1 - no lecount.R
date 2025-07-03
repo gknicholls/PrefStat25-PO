@@ -7,16 +7,8 @@
 
 #https://github.com/gknicholls/PrefStat25-PO
 
-#The library lecount should be installed from the zip file in the 
-#same directory "Code for Prac" as this file.
-#You can also try
-#
-#install.packages('lecount', , 'http://www.rforge.net/')
-#
-#You can find the zip file here https://www.rforge.net/lecount/
-
 #if you are unable to install lecount then there are a few
-#adjustments needed below - they are indicated
+#adjustments needed below - this version of the prac doesnt use lecount
 
 #######################################################################
 ### 1/12 Setup
@@ -35,13 +27,13 @@ library(igraph)
 library(Rgraphviz)
 library(graph) 
 library(coda)       # for MCMC output analysis
-library(lecount)    # count linear extensions of a PO
+#library(lecount)    # count linear extensions of a PO
 library(partitions) # used by dimension functions
 
 # where are we working?
 
 #update this to suit yourself
-wd<-"C:/Users/nicholls.NICHOLLS2389/OneDrive - Nexus365/Documents/GitHub/PrefStat25-PO/Code for Practical/"
+wd<-"C:/Users/nicholls.NICHOLLS2389/OneDrive - Nexus365/Documents/GitHub/PrefStat25-PO/Code for Practical - Without lecount/"
 setwd(wd)
 
 # load function files
@@ -439,8 +431,8 @@ title("estimated PO")
 #you may need to stop the following and adjust the numbers down
 #depending on the hardware you are using
 
-#mv<-seq(8,16,2);   # if no lecount()
-mv<-seq(35,47,2); # if lecount() loaded - unwise to try above 50 (memory)
+mv<-seq(8,16,2);   # if no lecount()
+#mv<-seq(35,47,2); # if lecount() loaded - unwise to try above 50 (memory)
 mvl=length(mv); rt<-numeric(mvl)
 pb<-txtProgressBar(min=1, max=mvl, style=3)
 for (i in 1:mvl) {
